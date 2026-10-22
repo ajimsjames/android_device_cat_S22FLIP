@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kernel-manager>
+    <!-- CPU clusters for Snapdragon 215 / QM215 (4x Cortex-A53 quad-core) -->
+    <cpu id="little" group="CPU Cluster" minId="axion_min_freq" maxId="axion_max_freq" governorId="little_cpu_governor" node="/sys/devices/system/cpu/cpufreq/policy0" />
+
+    <!-- GPU (Qualcomm Adreno 308 kgsl) -->
+    <gpu node="/sys/class/kgsl/kgsl-3d0/devfreq" currentNode="/sys/class/kgsl/kgsl-3d0/gpuclk" usageNode="/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage" frequencyMultiplier="1" values="200000000,310000000,400000000,484800000" />
+</kernel-manager>

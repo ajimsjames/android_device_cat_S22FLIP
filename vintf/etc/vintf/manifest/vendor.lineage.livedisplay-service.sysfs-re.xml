@@ -1,0 +1,10 @@
+<!--
+    Input:
+        hardware/voltage/interfaces/livedisplay/aidl/sysfs/vendor.lineage.livedisplay-service.sysfs-re.xml
+-->
+<manifest version="9.0" type="device">
+    <hal format="aidl">
+        <name>vendor.lineage.livedisplay</name>
+        <fqname>IReadingEnhancement/default</fqname>
+    </hal>
+</manifest>

@@ -1,0 +1,10 @@
+<!--
+    Input:
+        device/cat/S22FLIP/dumpstate/dumpstate-s22flip.xml
+-->
+<manifest version="9.0" type="device">
+    <hal format="aidl">
+        <name>android.hardware.dumpstate</name>
+        <fqname>IDumpstateDevice/default</fqname>
+    </hal>
+</manifest>
