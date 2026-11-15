@@ -21,7 +21,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 WITH_GMS := true
 
 # Include TT9 keyboard and Power HAL
-PRODUCT_PACKAGES += TT9 android.hardware.power-service-qti
+PRODUCT_PACKAGES += TT9 android.hardware.power@1.0-service
 
 # Reduce main-thread overhead and limit background apps
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
