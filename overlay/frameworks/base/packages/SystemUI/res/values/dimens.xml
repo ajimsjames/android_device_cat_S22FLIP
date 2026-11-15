@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     Cat S22 Flip Compact Tile Dimensions & Spacing
+-->
+<resources>
+    <!-- Reduce height and padding to fit 3x3 cleanly like classic Android -->
+    <dimen name="qs_tile_height">52dp</dimen>
+    <dimen name="qs_tile_margin_horizontal">4dp</dimen>
+    <dimen name="qs_tile_margin_vertical">4dp</dimen>
+    <dimen name="qs_tile_margin_top_bottom">2dp</dimen>
+    <dimen name="qs_tile_padding">6dp</dimen>
+    <dimen name="qs_tile_start_padding">8dp</dimen>
+    <dimen name="qs_tile_text_size">11sp</dimen>
+</resources>

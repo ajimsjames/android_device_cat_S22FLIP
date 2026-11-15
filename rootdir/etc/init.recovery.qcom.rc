@@ -1,0 +1,28 @@
+# Copyright (c) 2017-2018,2020 The Linux Foundation. All rights reserved.
+
+on early-init
+    # Set the USB controller for Qualcomm QM215/MSM8937
+    setprop sys.usb.controller msm_hsusb
+    setprop vendor.usb.controller msm_hsusb
+
+on init
+    write /sys/class/backlight/panel0-backlight/brightness 200
+    setprop sys.usb.controller msm_hsusb
+    setprop vendor.usb.controller msm_hsusb
+    setprop sys.usb.configfs 1
+
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+    write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
+
+on fs
+    write /sys/kernel/sdhci_msm/add_host 1
+    wait /dev/block/platform/soc/7824900.sdhci
+    symlink /dev/block/platform/soc/7824900.sdhci /dev/block/bootdevice
+    symlink /dev/block/platform/soc/7824900.sdhci/by-name /dev/block/by-name
+    start recovery_logger
+
+service recovery_logger /recovery_logger.sh
+    user root
+    group root system
+    seclabel u:r:recovery:s0

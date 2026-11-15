@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Disable rounded corners emulation overhead on rectangular display -->
+    <bool name="config_supportRoundedCorners">false</bool>
+    <dimen name="rounded_corner_radius">0dp</dimen>
+    <dimen name="rounded_corner_radius_top">0dp</dimen>
+    <dimen name="rounded_corner_radius_bottom">0dp</dimen>
+
+    <!-- Disable background blur shaders completely in SystemUI -->
+    <bool name="config_enableBlurs">false</bool>
+    <bool name="config_avoidGfxAccel">false</bool>
+</resources>

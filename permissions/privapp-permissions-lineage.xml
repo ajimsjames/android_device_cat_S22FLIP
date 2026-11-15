@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.android.emergency">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.android.systemui">
+        <permission name="android.permission.READ_WIFI_CREDENTIAL"/>
+        <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.android.launcher3">
+        <permission name="android.permission.STOP_APP_SWITCHES"/>
+        <permission name="android.permission.START_TASKS_FROM_RECENTS"/>
+        <permission name="android.permission.STATUS_BAR"/>
+        <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/>
+    </privapp-permissions>
+</permissions>

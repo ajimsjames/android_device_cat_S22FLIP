@@ -1,0 +1,5 @@
+# IR
+type ir_device, dev_type;
+
+# Device specific rules
+typeattribute system_block_device super_block_device_type;

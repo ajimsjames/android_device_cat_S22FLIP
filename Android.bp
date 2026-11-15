@@ -1,0 +1,11 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// Root Android.bp for Cat S22 Flip (Bullitt QM215 / MSM8937)
+//
+
+soong_namespace {
+    imports: [
+        "device/cat/s22flip",
+    ],
+}

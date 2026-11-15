@@ -1,0 +1,4 @@
+get_prop(zygote, exported_camera_prop);
+
+# Device specific rules
+get_prop(zygote, vendor_xiaomi_prop)

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2026 The LineageOS Project
+
+    Cat S22 Flip Hardware Overlay Definitions
+-->
+<resources>
+    <!-- Screen resolution: 480x640, portrait flip -->
+    <!-- Disable software navigation bar since Cat S22 has physical hardware keys -->
+    <bool name="config_showNavigationBar">false</bool>
+
+    <!-- Enable flip close behavior to turn off screen -->
+    <bool name="config_lidControlsSleep">true</bool>
+
+    <!-- Support proximity sensor check before screen on -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+
+    <!-- No notch / cutout on Cat S22 Flip -->
+    <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
+
+    <!-- Low-RAM optimizations -->
+    <bool name="config_avoidGfxAccel">false</bool>
+
+    <!-- Disable background blur and screen decoration layers -->
+    <bool name="config_supportRoundedCorners">false</bool>
+    <dimen name="rounded_corner_radius">0dp</dimen>
+    <dimen name="rounded_corner_radius_top">0dp</dimen>
+    <dimen name="rounded_corner_radius_bottom">0dp</dimen>
+    <bool name="config_ui_enableFadingMarquee">false</bool>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     Cat S22 Flip Compact Hotseat Spacing (Eliminate empty space below dock)
+-->
+<resources>
+    <!-- Reduce extra vertical space reserved below dock icons -->
+    <dimen name="dynamic_grid_hotseat_extra_vertical_size">0dp</dimen>
+    <dimen name="dynamic_grid_hotseat_top_padding">2dp</dimen>
+    <dimen name="dynamic_grid_hotseat_bottom_padding">2dp</dimen>
+    <dimen name="dynamic_grid_hotseat_bottom_non_tall_padding">0dp</dimen>
+</resources>

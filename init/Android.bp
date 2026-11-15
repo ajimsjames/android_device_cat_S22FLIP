@@ -1,0 +1,11 @@
+cc_library_static {
+    name: "libinit_s22flip",
+    recovery_available: true,
+    srcs: ["init_s22flip.cpp"],
+    include_dirs: [
+        "system/core/init",
+    ],
+    shared_libs: [
+        "libbase",
+    ],
+}
