@@ -1,0 +1,35 @@
+cc_binary {
+    name: "keypad_debounce_clean",
+    srcs: ["keypad_debounce_smart.c"],
+    cflags: ["-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-sign-compare"],
+}
+
+cc_binary {
+    name: "cat_hall_keylight",
+    srcs: ["cat_hall_keylight.c"],
+    cflags: ["-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-sign-compare"],
+}
+
+cc_binary {
+    name: "cat_hall_wake",
+    srcs: ["cat_hall_wake.c"],
+    cflags: ["-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-sign-compare"],
+}
+
+cc_binary {
+    name: "cat_boot_display",
+    srcs: ["cat_boot_display.c"],
+    cflags: ["-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-sign-compare"],
+}
+
+cc_binary {
+    name: "cat_watchdog",
+    srcs: ["cat_watchdog.c"],
+    cflags: ["-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-sign-compare"],
+}
+
+cc_binary {
+    name: "outerscreen_service",
+    srcs: ["outerscreen_service.c"],
+    cflags: ["-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-sign-compare"],
+}

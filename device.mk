@@ -124,3 +124,18 @@ PRODUCT_COPY_FILES += \
     device/cat/s22flip/permissions/privapp-permissions-lineage.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineage.xml
 
 
+
+# Cat S22 Flip hardware daemons (outer screen, keypad debounce, hall sensor)
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
+PRODUCT_PACKAGES += \
+    keypad_debounce_clean \
+    cat_hall_keylight \
+    cat_hall_wake \
+    cat_boot_display \
+    cat_watchdog \
+    outerscreen_service
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/cat_hardware.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/cat_hardware.rc \
+    $(DEVICE_PATH)/rootdir/bin/cat_perf.sh:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/cat_perf.sh
