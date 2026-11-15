@@ -52,13 +52,15 @@ on fs
     restorecon_recursive /sys/kernel/boot_adsp
     write /sys/kernel/boot_adsp/boot 1
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_swr audio_platform audio_swr_ctrl audio_hdmi audio_wcd9xxx audio_wcd_core audio_wsa881x_analog audio_wsa881x audio_mbhc audio_stub audio_digital_cdc audio_analog_cdc audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm450 audio_machine_ext_sdm450
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules pronto_wlan
     wait /dev/block/bootdevice/by-name/oem
     mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
 
     #add start: 20201218, YansongPeng add for carrier partition.
     chown root root /carrier
     chmod 0771 /carrier
+
+on property:sys.boot_completed=1
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules pronto_wlan
     restorecon_recursive /carrier
     #add end: 20201218.
     mkdir /carrier/oslock

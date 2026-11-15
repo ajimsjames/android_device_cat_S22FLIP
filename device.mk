@@ -72,7 +72,6 @@ PRODUCT_PACKAGES += \
 # Low-RAM Optimization Properties (2GB Physical RAM)
 # -----------------------------------------------------------------------------
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240 \
     ro.config.low_ram=true \
     ro.config.avoid_gfx_accel=false \
     ro.surface_flinger.supports_background_blur=0 \

@@ -72,7 +72,7 @@ AUDIO_FEATURE_ENABLED_DLKM := false
 # -----------------------------------------------------------------------------
 # Display & Graphics
 # -----------------------------------------------------------------------------
-TARGET_SCREEN_DENSITY := 240
+TARGET_SCREEN_DENSITY := 192
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
