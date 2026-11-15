@@ -17,6 +17,20 @@ $(call inherit-product, device/cat/s22flip/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Include GApps
+WITH_GMS := true
+
+# Include TT9 keyboard
+PRODUCT_PACKAGES += TT9
+
+# Reduce main-thread overhead and enable low-RAM optimizations
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.strictmode.disable=true \
+    ro.config.low_ram=true \
+    ro.config.max_starting_bg=3 \
+    ro.vendor.qti.sys.fw.bg_apps_limit=12 \
+    ro.lmk.use_minfree_levels=true
+
 PRODUCT_NAME := lineage_s22flip
 PRODUCT_DEVICE := s22flip
 PRODUCT_MANUFACTURER := Cat

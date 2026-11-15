@@ -138,4 +138,5 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/cat_hardware.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/cat_hardware.rc \
-    $(DEVICE_PATH)/rootdir/bin/cat_perf.sh:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/cat_perf.sh
+    $(DEVICE_PATH)/rootdir/bin/cat_perf.sh:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/cat_perf.sh \
+    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom

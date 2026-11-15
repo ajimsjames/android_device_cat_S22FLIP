@@ -36,14 +36,15 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_DTB_OFFSET := 0x01f00000
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom androidboot.memcg=true user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000 vmalloc=300M androidboot.usbconfigfs=true cgroup.memory=nokmem,nosocket loop.max_part=7 buildvariant=eng androidboot.selinux=permissive enforcing=0
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom androidboot.memcg=true user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000 vmalloc=300M androidboot.usbconfigfs=true cgroup.memory=nokmem,nosocket loop.max_part=7 androidboot.selinux=permissive enforcing=0
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --dtb_offset $(BOARD_DTB_OFFSET)
 
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := cats22_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
-# TARGET_KERNEL_SOURCE := kernel/cat/msm-4.9
+TARGET_KERNEL_SOURCE := kernel/cat/msm-4.9
+TARGET_KERNEL_CLANG_COMPILE := false
 
 # Prebuilts fallback
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -150,7 +151,7 @@ include vendor/cat/s22flip/BoardConfigVendor.mk
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 
 # Use prebuilt kernel and header includes for standalone system build
-TARGET_PREBUILT_KERNEL := device/cat/s22flip/prebuilts/zImage
+# TARGET_PREBUILT_KERNEL := device/cat/s22flip/prebuilts/zImage
 
 # VINTF: install device manifest as /vendor/etc/vintf/manifest.xml (stock-identical).
 # Without it the vendor image has no HAL manifest and framework/hwservicemanager fail.

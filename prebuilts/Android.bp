@@ -1,0 +1,10 @@
+android_app_import {
+    name: "TT9",
+    apk: "TT9.apk",
+    default_dev_cert: true,
+    product_specific: true,
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+}
