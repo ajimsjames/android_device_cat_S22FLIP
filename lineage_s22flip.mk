@@ -20,8 +20,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Include GApps
 WITH_GMS := true
 
-# Include TT9 keyboard and Power HAL
-PRODUCT_PACKAGES += TT9 android.hardware.power@1.0-service
+# Include TT9 keyboard, Power HAL, and Lights HAL
+PRODUCT_PACKAGES += TT9 android.hardware.power@1.0-service android.hardware.light@2.0-service
 
 # Reduce main-thread overhead and limit background apps
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
