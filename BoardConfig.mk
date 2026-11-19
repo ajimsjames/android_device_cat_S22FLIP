@@ -139,7 +139,9 @@ include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
+endif
 
 # -----------------------------------------------------------------------------
 # Build system flags
@@ -151,14 +153,16 @@ include vendor/cat/s22flip/BoardConfigVendor.mk
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 
 # Use prebuilt kernel and header includes for standalone system build
-# TARGET_PREBUILT_KERNEL := device/cat/s22flip/prebuilts/zImage
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/zImage
+TARGET_FORCE_PREBUILT_KERNEL := true
 
 # VINTF: install device manifest as /vendor/etc/vintf/manifest.xml (stock-identical).
 # Without it the vendor image has no HAL manifest and framework/hwservicemanager fail.
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml \
     $(DEVICE_PATH)/vintf/android.hardware.atrace@1.0-service.xml \
-    $(DEVICE_PATH)/vintf/android.hardware.cas@1.2-service-lazy.xml \
     $(DEVICE_PATH)/vintf/android.hardware.gnss@2.1-service-qti.xml \
+    $(DEVICE_PATH)/vintf/android.hardware.power@1.0.xml \
+    $(DEVICE_PATH)/vintf/android.hardware.wifi.supplicant.xml \
     $(DEVICE_PATH)/vintf/android.hardware.wifi@1.0-service.xml \
     $(DEVICE_PATH)/vintf/android.hardware.wifi.hostapd.xml \
     $(DEVICE_PATH)/vintf/manifest_android.hardware.drm@1.3-service.clearkey.xml \
@@ -175,29 +179,7 @@ AUDIO_FEATURE_ENABLED_G711 := false
 TARGET_USES_QCOM_MM_AUDIO := false
 BOARD_USES_QCOM_AUDIO := false
 
-# Explicitly set kernel modules to load into vendor/lib/modules/modules.load
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(TARGET_OUT_VENDOR)/lib/modules/audio_apr.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/pronto_wlan.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_q6_notifier.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_adsp_loader.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_q6.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_usf.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_pinctrl_wcd.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_swr.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_wcd_core.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_swr_ctrl.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_wsa881x.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_wsa881x_analog.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_platform.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_cpe_lsm.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_hdmi.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_stub.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_wcd9xxx.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_mbhc.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_wcd9335.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_wcd_cpe.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_digital_cdc.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_analog_cdc.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_native.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_machine_sdm450.ko \
-    $(TARGET_OUT_VENDOR)/lib/modules/audio_machine_ext_sdm450.ko
+# Using prebuilt vendor/lib/modules/ from s22flip-vendor.mk
+# BOARD_VENDOR_KERNEL_MODULES_LOAD := ...
+
+TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/config.fs

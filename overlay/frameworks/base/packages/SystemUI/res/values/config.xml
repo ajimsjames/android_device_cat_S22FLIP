@@ -4,11 +4,11 @@
      Cat S22 Flip SystemUI Quick Settings Grid & Compact Layout Configuration
 -->
 <resources>
-    <!-- Number of columns in Quick Settings (3 columns instead of 2) -->
-    <integer name="quick_settings_num_columns">3</integer>
+    <!-- Number of columns in Quick Settings (1 column list view) -->
+    <integer name="quick_settings_num_columns">1</integer>
 
-    <!-- Maximum rows shown in Quick Settings (3 rows for a 3x3 layout) -->
-    <integer name="quick_settings_max_rows">3</integer>
+    <!-- Maximum rows shown in Quick Settings -->
+    <integer name="quick_settings_max_rows">4</integer>
 
     <!-- Minimum number of tiles displayed -->
     <integer name="quick_settings_min_num_tiles">6</integer>

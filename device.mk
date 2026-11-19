@@ -133,9 +133,43 @@ PRODUCT_PACKAGES += \
     cat_hall_wake \
     cat_boot_display \
     cat_watchdog \
-    outerscreen_service
+    outerscreen_service \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    ueventd.qcom.rc \
+    android.frameworks.displayservice@1.0.vendor \
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.drm@1.0.vendor \
+    android.hardware.drm@1.1.vendor \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.3.vendor \
+    android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.gnss.measurement_corrections@1.0.vendor \
+    android.hardware.gnss.measurement_corrections@1.1.vendor \
+    android.hardware.gnss.visibility_control@1.0.vendor \
+    android.hardware.gnss@1.0.vendor \
+    android.hardware.gnss@1.1.vendor \
+    android.hardware.gnss@2.0.vendor \
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.health@2.1.vendor \
+    android.hardware.keymaster@3.0.vendor \
+    android.hardware.keymaster@4.0.vendor \
+    android.hardware.keymaster@4.1.vendor \
+    android.hardware.power@1.2.vendor \
+    android.system.net.netd@1.1.vendor
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/cat_hardware.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/cat_hardware.rc \
     $(DEVICE_PATH)/rootdir/bin/cat_perf.sh:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/cat_perf.sh \
-    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
+    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
+    vendor/cat/s22flip/proprietary/vendor/lib/hw/android.hardware.light@2.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/android.hardware.light@2.0-impl.so \
+    vendor/cat/s22flip/proprietary/vendor/lib/hw/android.hardware.power@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/android.hardware.power@1.0-impl.so \
+    vendor/cat/s22flip/proprietary/vendor/lib/libnl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libnl.so \
+    vendor/cat/s22flip/proprietary/vendor/lib/modules/pronto_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wlan.ko \
+    vendor/cat/s22flip/proprietary/vendor/lib/modules/pronto_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/pronto/pronto_wlan.ko \
+    $(DEVICE_PATH)/fonts/SpaceMono-Regular.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SpaceMono-Regular.ttf \
+    $(DEVICE_PATH)/fonts/SpaceMono-Italic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SpaceMono-Italic.ttf \
+    $(DEVICE_PATH)/fonts/SpaceMono-Bold.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SpaceMono-Bold.ttf \
+    $(DEVICE_PATH)/fonts/SpaceMono-BoldItalic.ttf:$(TARGET_COPY_OUT_SYSTEM)/fonts/SpaceMono-BoldItalic.ttf

@@ -58,9 +58,6 @@ on fs
     #add start: 20201218, YansongPeng add for carrier partition.
     chown root root /carrier
     chmod 0771 /carrier
-
-on property:sys.boot_completed=1
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules pronto_wlan
     restorecon_recursive /carrier
     #add end: 20201218.
     mkdir /carrier/oslock
@@ -136,6 +133,7 @@ service qrngp /system/bin/qrngp -f
 
 on property:sys.boot_completed=1
    start qrngp
+   exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules pronto_wlan
 
 service vendor.qseecomd /vendor/bin/qseecomd
    class core

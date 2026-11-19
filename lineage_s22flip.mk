@@ -17,8 +17,8 @@ $(call inherit-product, device/cat/s22flip/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Include GApps
-WITH_GMS := true
+# Exclude GApps for minimal/low-RAM build
+WITH_GMS := false
 
 # Include TT9 keyboard, Power HAL, and Lights HAL
 PRODUCT_PACKAGES += TT9 android.hardware.power@1.0-service android.hardware.light@2.0-service

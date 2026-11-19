@@ -55,3 +55,6 @@
 # Partitions
 /dev/block/platform/soc/7824900\.sdhci/by-name/cust     u:object_r:system_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/system   u:object_r:system_block_device:s0
+
+# Smart PA
+/(vendor|system/vendor)/bin/smartpa                     u:object_r:smartpa_exec:s0
