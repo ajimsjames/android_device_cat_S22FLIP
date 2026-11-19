@@ -147,7 +147,9 @@ endif
 # Build system flags
 # -----------------------------------------------------------------------------
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_DUP_SYSPROP := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 include vendor/cat/s22flip/BoardConfigVendor.mk
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)

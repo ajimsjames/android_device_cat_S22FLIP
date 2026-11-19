@@ -13,6 +13,9 @@ DEVICE_PATH := device/cat/s22flip
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+# VINTF / Treble (Android 11 / API 30+)
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # -----------------------------------------------------------------------------
 # Screen & Boot Animation (Cat S22 Flip: 480 x 640 portrait flip)
 # -----------------------------------------------------------------------------
@@ -157,7 +160,16 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0.vendor \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.power@1.2.vendor \
-    android.system.net.netd@1.1.vendor
+    android.system.net.netd@1.1.vendor \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.common@6.0-util.vendor \
+    android.hardware.audio.common@5.0-util.vendor \
+    android.hardware.audio.common@4.0-util.vendor \
+    android.hardware.audio.common@2.0-util.vendor \
+    android.hardware.audio.common-util.vendor \
+    libeffectsconfig.vendor \
+    libnbaio_mono.vendor
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/cat_hardware.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/cat_hardware.rc \
